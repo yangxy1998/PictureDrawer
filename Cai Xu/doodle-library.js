@@ -115,6 +115,10 @@ function Primitive(attrs) {
 }
 Primitive.inheritsFrom(Drawable);
 
+Primitive.setColor=function (color) {
+    this.color=color;
+}
+
 function Text(attrs) {
     var dflt = {
         content: "",

@@ -30,7 +30,7 @@ Function.prototype.inheritsFrom = function( parentClassOrObject ){
 
 // useful for merging attributes with default
 // Merges obj2 with obj1, returning result. If obj1 has property, obj2 overwrites that property
-// If either obj1 or obj2 are undefined, DO SOMETHING TODO!!!
+
 function mergeObjects(obj1, obj2) {
     var result = {};
     if(typeof (obj1)=='undefined'){

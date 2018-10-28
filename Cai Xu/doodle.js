@@ -35,13 +35,25 @@ document.getElementById('pen').onclick=function(e){
 document.getElementById('point').onclick=function(e){
     mode=4;
 }
-
+document.getElementById('red').onclick=function(e){
+    //TODO
+}
+document.getElementById('green').onclick=function(e){
+    //TODO
+}
+document.getElementById('blue').onclick=function(e){
+    //TODO
+}
+document.getElementById('black').onclick=function(e){
+    //TODO
+}
 document.getElementById('myCanvas').onmousedown=function(e){
     if(mode==1){
         this.line=new Line({
             startX: e.pageX-this.offsetLeft,
             startY: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
+            //TODO
         });
     }
     else if(mode==2){
@@ -49,6 +61,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             left: e.pageX-this.offsetLeft,
             top: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
+            //TODO
         });
     }
     else if(mode==3){
@@ -61,6 +74,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             left: e.pageX-this.offsetLeft,
             top: e.pageY-this.offsetTop,
             radius: document.getElementById('width').value,
+            //TODO
         });
         window.pointContainer.children.push(this.point);
         window.root.draw();
@@ -102,6 +116,7 @@ document.getElementById('myCanvas').onmousemove=function(e){
                 left: e.pageX-this.offsetLeft,
                 top: e.pageY-this.offsetTop,
                 radius: document.getElementById('width').value,
+                //TODO
             });
             this.pointGroup.children.push(this.point);
             window.root.draw();

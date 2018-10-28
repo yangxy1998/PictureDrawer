@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <script src="utils.js"></script>
+    <script src="doodle-library.js"></script>
+    <script src="canvas2image.js"></script>
+</head>
+<body>
+
+<center>
+    <form>
+    LineWidth:0<input type="range" id="width" value="10" min="0" max="20" step="1">20
+    </form>
+    <menu>
+        <button id="line">Draw Line</button>
+        <button id="rect">Draw Rectangle</button>
+        <button id="pen">General Pen</button>
+        <button id="point">Draw Point</button>
+        <button id="undo">Undo</button>
+    </menu>
+    <menu>
+        <button id="red">Red</button>
+        <button id="green">Green</button>
+        <button id="blue">Blue</button>
+        <button id="black">Black</button>
+    </menu>
+    <div>
+        <p>
+            <button id="save">save</button> or <button id="convert">convert to</button> as:
+            <select id="sel">
+                <option value="png">png</option>
+                <option value="jpeg">jpeg</option>
+                <option value="bmp">bmp</option>
+            </select><br/>
+            width : <input type="number" value="300" id="imgW" /><br/>
+            height : <input type="number" value="200" id="imgH" /><br>
+            fileName: <input type="text" placeholder="optional" id="imgFileName">
+        </p>
+
+    </div>
+    <div id="imgs">
+
+    </div>
+    <canvas id="myCanvas" width="1024" height="768">
+    </canvas>
+</center>
+
+<script src="doodle.js"></script>
+</body>
+</html>
+</html>

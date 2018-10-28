@@ -1,2 +1,5 @@
 .idea/
-target/
+.idea/workspace.xml
+SaveAnswer/
+ColorAnswer/
+.idea/
