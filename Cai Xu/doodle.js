@@ -1,4 +1,5 @@
 var mode=0;
+var mode1="";
 
 window.onload = function () {
     this.canvas = document.getElementById("myCanvas");
@@ -37,15 +38,19 @@ document.getElementById('point').onclick=function(e){
 }
 document.getElementById('red').onclick=function(e){
     //TODO
+	mode1='red';
 }
 document.getElementById('green').onclick=function(e){
     //TODO
+	mode1='green';
 }
 document.getElementById('blue').onclick=function(e){
     //TODO
+	mode1='blue';
 }
 document.getElementById('black').onclick=function(e){
     //TODO
+	mode1='black';
 }
 document.getElementById('myCanvas').onmousedown=function(e){
     if(mode==1){
@@ -54,6 +59,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             startY: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
             //TODO
+			color:mode1,
         });
     }
     else if(mode==2){
@@ -62,6 +68,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             top: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
             //TODO
+			color:mode1,
         });
     }
     else if(mode==3){
@@ -75,6 +82,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             top: e.pageY-this.offsetTop,
             radius: document.getElementById('width').value,
             //TODO
+			color:mode1,
         });
         window.pointContainer.children.push(this.point);
         window.root.draw();
@@ -117,9 +125,23 @@ document.getElementById('myCanvas').onmousemove=function(e){
                 top: e.pageY-this.offsetTop,
                 radius: document.getElementById('width').value,
                 //TODO
+				color:mode1,
             });
             this.pointGroup.children.push(this.point);
             window.root.draw();
         }
     }
+}
+document.getElementById('save').onclick = function (e) {
+    var type = document.getElementById('sel').value,
+        w = document.getElementById('imgW').value,
+        h = document.getElementById('imgH').value;
+    f = document.getElementById('imgFileName').value;
+    Canvas2Image.saveAsImage(canvas, w, h, type,f);
+}
+document.getElementById('convert').onclick = function (e) {
+    var type = document.getElementById('sel').value,
+        w = document.getElementById('imgW').value,
+        h =document.getElementById('imgH').value;
+    document.getElementById('imgs').appendChild(Canvas2Image.convertToImage(canvas, w, h, type))
 }
