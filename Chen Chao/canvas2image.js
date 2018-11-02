@@ -2,7 +2,21 @@
  * covert canvas to image
  * and save the image file
  */
-
+// 绑定
+document.getElementById('save').onclick = function (e) {
+    var type = document.getElementById('sel').value,
+        w = document.getElementById('imgW').value,
+        h = document.getElementById('imgH').value;
+        cav=document.getElementById('myCanvas');
+        f = document.getElementById('imgFileName').value;
+    Canvas2Image.saveAsImage(cav, w, h, type,f);
+}
+document.getElementById('convert').onclick = function (e) {
+    var type = document.getElementById('sel').value,
+        w = document.getElementById('imgW').value,
+        h = document.getElementById('imgH').value;
+    document.getElementById('imgs').appendChild(Canvas2Image.convertToImage(canvas, w, h, type))
+}
 var Canvas2Image = function () {
 
     // check if support sth.
@@ -266,10 +280,14 @@ var Canvas2Image = function () {
         },
         convertToGIF: function (canvas, width, height) {
             return convertToImage(canvas, width, height, 'gif');
-        },
-        convertToBMP: function (canvas, width, height) {
-            return convertToImage(canvas, width, height, 'bmp');
-        }
-    };
+},
+convertToBMP: function (canvas, width, height) {
+    return convertToImage(canvas, width, height, 'bmp');
+}
+};
 
 }();
+
+// 执行
+
+

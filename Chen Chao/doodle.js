@@ -1,4 +1,5 @@
 var mode=0;
+var myColor="black";/*添加全局变量保存颜色设置*/
 
 window.onload = function () {
     this.canvas = document.getElementById("myCanvas");
@@ -37,15 +38,19 @@ document.getElementById('point').onclick=function(e){
 }
 document.getElementById('red').onclick=function(e){
     //TODO
+    myColor="red";
 }
 document.getElementById('green').onclick=function(e){
     //TODO
+    myColor="green";
 }
 document.getElementById('blue').onclick=function(e){
     //TODO
+    myColor="blue";
 }
 document.getElementById('black').onclick=function(e){
     //TODO
+    myColor="black";
 }
 document.getElementById('myCanvas').onmousedown=function(e){
     if(mode==1){
@@ -53,6 +58,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             startX: e.pageX-this.offsetLeft,
             startY: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
+            color:myColor,
             //TODO
         });
     }
@@ -61,6 +67,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             left: e.pageX-this.offsetLeft,
             top: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
+            color:myColor,
             //TODO
         });
     }
@@ -74,6 +81,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             left: e.pageX-this.offsetLeft,
             top: e.pageY-this.offsetTop,
             radius: document.getElementById('width').value,
+            color:myColor,
             //TODO
         });
         window.pointContainer.children.push(this.point);
@@ -116,6 +124,7 @@ document.getElementById('myCanvas').onmousemove=function(e){
                 left: e.pageX-this.offsetLeft,
                 top: e.pageY-this.offsetTop,
                 radius: document.getElementById('width').value,
+                color:myColor,
                 //TODO
             });
             this.pointGroup.children.push(this.point);
