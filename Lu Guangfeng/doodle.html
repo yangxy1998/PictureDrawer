@@ -5,7 +5,7 @@
     <script src="doodle-library.js"></script>
     <script src="canvas2image.js"></script>
 </head>
-<body>
+<body style="background-color: grey;">
 
 <center>
     <form>
@@ -41,11 +41,39 @@
     <div id="imgs">
 
     </div>
-    <canvas id="myCanvas" width="1024" height="768">
+    
+    <canvas id="myCanvas" width="1024" height="768" style="background-color: white;">
     </canvas>
 </center>
 
 <script src="doodle.js"></script>
+<script>
+	    /**
+     * [saveAsImage]
+     * @param  {[obj]} canvas   [canvasElement]
+     * @param  {[Number]} width    [optional] png width
+     * @param  {[Number]} height   [optional] png height
+     * @param  {[String]} type     [image type]
+     * @param  {[String]} filename [image filename]
+     * @return {[type]}          [description]
+     */
+	
+	document.getElementById('save').onclick = function (e) {
+		var cav=document.getElementById('myCanvas'),
+			w = document.getElementById('imgW').value,
+			h = document.getElementById('imgH').value,
+			type = document.getElementById('sel').value,
+			f = document.getElementById('imgFileName').value;
+		Canvas2Image.saveAsImage(cav, w, h, type,f);
+	}
+	
+	document.getElementById('convert').onclick = function (e) {
+		var type = document.getElementById('sel').value,
+			w = document.getElementById('imgW').value,
+			h = document.getElementById('imgH').value;
+		document.getElementById('imgs').appendChild(Canvas2Image.convertToImage(canvas, w, h, type))
+	}
+</script>
 </body>
 </html>
 </html>

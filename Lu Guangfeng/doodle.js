@@ -1,4 +1,4 @@
-var mode=0;
+var mode=0, color1="black";
 
 window.onload = function () {
     this.canvas = document.getElementById("myCanvas");
@@ -36,16 +36,16 @@ document.getElementById('point').onclick=function(e){
     mode=4;
 }
 document.getElementById('red').onclick=function(e){
-    //TODO
+    color1="red"
 }
 document.getElementById('green').onclick=function(e){
-    //TODO
+    color1="green"
 }
 document.getElementById('blue').onclick=function(e){
-    //TODO
+    color1="blue"
 }
 document.getElementById('black').onclick=function(e){
-    //TODO
+    color1="black"
 }
 document.getElementById('myCanvas').onmousedown=function(e){
     if(mode==1){
@@ -53,7 +53,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             startX: e.pageX-this.offsetLeft,
             startY: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
-            //TODO
+            color: color1,
         });
     }
     else if(mode==2){
@@ -61,7 +61,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             left: e.pageX-this.offsetLeft,
             top: e.pageY-this.offsetTop,
             lineWidth: document.getElementById('width').value,
-            //TODO
+            color: color1,
         });
     }
     else if(mode==3){
@@ -74,7 +74,7 @@ document.getElementById('myCanvas').onmousedown=function(e){
             left: e.pageX-this.offsetLeft,
             top: e.pageY-this.offsetTop,
             radius: document.getElementById('width').value,
-            //TODO
+            color: color1,
         });
         window.pointContainer.children.push(this.point);
         window.root.draw();
@@ -116,7 +116,7 @@ document.getElementById('myCanvas').onmousemove=function(e){
                 left: e.pageX-this.offsetLeft,
                 top: e.pageY-this.offsetTop,
                 radius: document.getElementById('width').value,
-                //TODO
+                color: color1,
             });
             this.pointGroup.children.push(this.point);
             window.root.draw();
